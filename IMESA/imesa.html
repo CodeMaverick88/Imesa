@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imesa Cleaning Agency</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add additional styling here */
+        .section-hidden {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-100 text-gray-900">
+
+    <!-- Header -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="logo.png" alt="" class="logo">
+            Imesa Cleaning
+        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+            <li class="nav-item"><a href="#location" class="nav-link">Location</a></li>
+            <li class="nav-item"><a href="#pricing" class="nav-link">Pricing</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">More</a>
+                <div class="dropdown-content">
+                    <a href="#contacts">Contacts</a>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#careers">Careers</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+
+
+<!-- Hero Section -->
+<section class="hero h-screen">
+    <div class="hero-overlay absolute inset-0 bg-black opacity-50"></div>
+    <div class="hero-content text-center text-white relative z-10 top-1/2 transform -translate-y-1/2">
+        <h1 class="text-4xl font-bold mb-4">Welcome to Imesa Cleaning Agency</h1>
+        <p class="mb-6">Your satisfaction is our priority. Experience the best cleaning services with us.</p>
+        <a href="#services" class="btn bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded">Learn More</a>
+    </div>
+    <div class="navigation-arrows absolute inset-0 flex justify-between items-center px-4">
+        <div class="arrow-left cursor-pointer text-white text-3xl">←</div>
+        <div class="arrow-right cursor-pointer text-white text-3xl">→</div>
+    </div>
+</section>
+
+<!-- Other sections (Introduction, Services, Testimonials, Special Offers, Footer) -->
+
+<script>
+const images = [
+    {
+        src: 'dope images.jpg',
+        title: 'Welcome to Imesa Cleaning Agency',
+        description: 'Your satisfaction is our priority. Experience the best cleaning services with us.',
+        animation: 'animate-left'
+    },
+    {
+        src: 'clothe1.jpg',
+        title: 'Professional Dry Cleaning Is Our Speciality',
+        description: 'Get your clothes cleaned with the utmost care by our professional staff.',
+        animation: 'animate-right'
+    },
+    {
+        src: 'dope detergent.jpg',
+        title: 'Eco-Friendly Products',
+        description: 'We use eco-friendly products to ensure a safe and healthy environment.',
+        animation: 'animate-up'
+    },
+    {
+        src: 'commercial.jpg',
+        title: 'Fast and Reliable Service',
+        description: 'Our quick turnaround time ensures you get your clothes back in no time.',
+        animation: 'animate-down'
+    },
+    {
+        src: 'money2.jpg',
+        title: 'Affordable Prices',
+        description: 'Quality cleaning services at prices you can afford.',
+        animation: 'animate-left'
+    },
+    {
+        src: 'hanging sit.jpeg',
+        title: 'Customer Satisfaction',
+        description: 'We prioritize our customers’ satisfaction above all else.',
+        animation: 'animate-right'
+    },
+    {
+        src: 'welcome2.jpg',  // Add your new image path here
+        title: '',
+        description: '',
+        animation: 'animate-up'
+    }
+];
+let currentImageIndex = 0;
+
+function changeBackgroundImage() {
+    const heroSection = document.querySelector('.hero');
+    const heroContent = document.querySelector('.hero-content');
+    const heroTitle = heroContent.querySelector('h1');
+    const heroDescription = heroContent.querySelector('p');
+    const currentImage = images[currentImageIndex];
+
+    heroSection.style.backgroundImage = `url('${currentImage.src}')`;
+
+    heroTitle.classList.remove('animate-left', 'animate-right', 'animate-up', 'animate-down');
+    heroDescription.classList.remove('animate-left', 'animate-right', 'animate-up', 'animate-down');
+
+    void heroTitle.offsetWidth; // Trigger reflow to restart the animation
+
+    heroTitle.textContent = currentImage.title;
+    heroDescription.textContent = currentImage.description;
+
+    heroTitle.classList.add(currentImage.animation);
+    heroDescription.classList.add(currentImage.animation);
+}
+
+function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    changeBackgroundImage();
+}
+
+function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    changeBackgroundImage();
+}
+
+document.querySelector('.arrow-right').addEventListener('click', nextImage);
+document.querySelector('.arrow-left').addEventListener('click', prevImage);
+
+setInterval(nextImage, 10000); // Change image every 10 seconds
+window.onload = changeBackgroundImage; // Set the initial background image
+</script>
+
+</script>
+
+
+    </script>
+  <!-- Why Choose Us Section -->
+
+     
+  <div class="container">
+
+    <div class="slide">
+
+        
+        <div class="item" style="background-image: url(experience3.jpg);">
+            <div class="content">
+                <div class="name">WE ARE EXPERIENCED</div>
+                <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(delivery.jpg);">
+            <div class="content">
+                <div class="name">FREE PICK UP AND DELIVERY</div>
+                <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(payment1.jpg);">
+            <div class="content">
+                <div class="name">FLEXIBLE PAYMENTS</div>
+                <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(satisfaction3.jpg);">
+            <div class="content">
+                <div class="name">SATISFACTION GUARANTEE</div>
+                <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                <button>See More</button>
+            </div>
+        </div>
+        <!-- <div class="item" style="background-image: url(https://i.ibb.co/jTQfmTq/img5.jpg);">
+            <div class="content">
+                <div class="name"></div>
+                <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(https://i.ibb.co/RNkk6L0/img6.jpg);">
+            <div class="content">
+                <div class="name">Ireland</div>
+                <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                <button>See More</button>
+            </div>
+        </div> -->
+
+    </div>
+
+    <div class="button">
+        <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+    <!-- Introduction Section -->
+    <section id="services" class="services p-8 bg-white">
+        <h2 class="text-3xl font-semibold text-center mb-8">Our Services</h2>
+        <div class="collage">
+            <div class="collage-item">
+                <img src="nursing home.jpg" alt="Hospital and Nursing Homes" class="collage-image">
+                <div class="collage-description">
+                    <h3>Hospital and Nursing Homes</h3>
+                    <p>Provide top-notch cleaning services for hospitals and nursing homes, ensuring a clean and safe environment for patients and staff.</p>
+                </div>
+            </div>
+            <div class="collage-item reverse">
+                <img src="restaurant 1.jpg" alt="Restaurants Hotels and Lodges" class="collage-image">
+                <div class="collage-description">
+                    <h3>Restaurants Hotels and Lodges</h3>
+                    <p>Offer cleaning services tailored to the needs of restaurants, hotels, and lodges, ensuring cleanliness and hygiene for guests.</p>
+                </div>
+            </div>
+            <div class="collage-item">
+                <img src="airline 1.jpg" alt="Airlines" class="collage-image">
+                <div class="collage-description">
+                    <h3>Airlines</h3>
+                    <p>Provide specialized cleaning services for airlines, maintaining cleanliness and sanitation standards for passengers and crew.</p>
+                </div>
+            </div>
+            <div class="collage-item reverse">
+                <img src="factory1.jpg" alt="Factory Laundry Services" class="">
+                <div class="collage-description">
+                    <h3>Factory Laundry Services</h3>
+                    <p>Offer laundry services customized for factories, ensuring efficient and timely cleaning of industrial textiles and garments.</p>
+                </div>
+            </div>
+            <div class="collage-item">
+                <img src="business2.jpg" alt="Business Laundry Service" class="collage-image">
+                <div class="collage-description">
+                    <h3>Business Laundry Service</h3>
+                    <p>Provide laundry solutions for businesses, including hotels, restaurants, and corporate offices, ensuring clean and well-maintained linens and uniforms.</p>
+                </div>
+            </div>
+            <div class="collage-item reverse">
+                <img src="institution.jpg" alt="Government Institution Laundry" class="collage-image">
+                <div class="collage-description">
+                    <h3>Government Institution Laundry</h3>
+                    <p>Offer laundry services for government institutions, maintaining high standards of cleanliness and hygiene for official uniforms and linens.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        window.addEventListener('scroll', function() {
+            const servicesSection = document.getElementById('services');
+            const sectionPosition = servicesSection.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+    
+            if (sectionPosition < windowHeight / 1.5) {
+                servicesSection.classList.remove('section-hidden');
+            } else {
+                servicesSection.classList.add('section-hidden');
+            }
+        });
+    </script>
+
+
+
+    <!-- Customer Testimonials Section -->
+    
+    <div class="testimonial-collage">
+        <div class="testimonial-item">
+            <img src="welcome.jpg" alt="Image 1" class="testimonial-image">
+            <div class="testimonial-content">
+                <h2>Testimonial 1</h2>
+                <p>This is the testimonial content for Testimonial 1. It can include details about the testimonial or any relevant information.</p>
+            </div>
+        </div>
+        <div class="testimonial-item">
+            <img src="welcome2.jpg" alt="Image 2" class="testimonial-image">
+            <div class="testimonial-content">
+                <h2>Testimonial 2</h2>
+                <p>This is the testimonial content for Testimonial 2. It can include details about the testimonial or any relevant information.</p>
+            </div>
+        </div>
+        <div class="testimonial-item">
+            <img src="welcome-3.jpg" alt="Image 3" class="testimonial-image">
+            <div class="testimonial-content">
+                <h2>Testimonial 3</h2>
+                <p>This is the testimonial content for Testimonial 3. It can include details about the testimonial or any relevant information.</p>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <!-- Special Offers Section -->
+    <section class="special-offers p-8 bg-white text-center">
+        <h2 class="text-3xl font-semibold mb-4 animate__animated animate__fadeIn">Special Offers</h2>
+        <p class="text-lg mb-6 animate__animated animate__fadeIn">Take advantage of our limited-time offers and save on
+            your next cleaning service!</p>
+        <a href="#contact"
+            class="btn bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded animate__animated animate__zoomIn">Contact
+            Us</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-blue-700 text-white p-4 text-center">
+        <p>&copy; 2023 Imesa Cleaning Agency. All rights reserved.</p>
+        <ul class="flex justify-center space-x-4 mt-2">
+            <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+            <li><a href="#" class="hover:underline">Terms of Service</a></li>
+        </ul>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.carousel-inner').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 3000
+            });
+        });
+    </script>
+</body>
+
+</html>
